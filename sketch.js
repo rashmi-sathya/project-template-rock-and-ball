@@ -32,20 +32,19 @@ function setup() {
   }
 
   var rock_options = {
-    restitution: 0.1,
+//set restitution to the rock as it does not bounce.
 
   }
    
-  btn2 = createImg('up.png');
-  btn2.position(350,30);
-  btn2.size(50,50);
-  btn2.mouseClicked(vForce);
+//Add the image for the button
+//Set the position of the button
+//Add mouseclicked operation
   
   ball = Bodies.circle(100,10,20,ball_options);
   World.add(world,ball);
   
-  rock = Bodies.circle(250,10,20,rock_options);
-  World.add(world,rock);
+//Create a rock object 
+//add the rock object to the world
 
   ground= Bodies.rectangle(200,390,400,20,ground_options);
 
@@ -65,15 +64,16 @@ function draw()
   
 rect(ground.position.x,ground.position.y,400,20);
 ellipse(ball.position.x,ball.position.y,20);
-push();
-fill("brown");
-ellipse(rock.position.x,rock.position.y,20);
-pop();
+//use push operation
+  fill("brown");
+//call ellipse operation
+  //use pop operation
 }
 
 function vForce()
 {
-  Matter.Body.applyForce(ball,{x:0,y:0},{x:0,y:-0.05});
+//apply force to the ball
+
 }
 
 
